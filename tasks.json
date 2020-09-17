@@ -8,9 +8,40 @@
             "type": "process",
             "command": "python",
             "args": [
-                "${workspaceRoot}/.vscode/generate_compdb.py"
+                "${workspaceFolder}/.vscode/generate_compdb.py"
             ],
             "problemMatcher": []
+        },
+        {
+            "label": "Compile kernel",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "-j4"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Compile rdmo",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "M=${workspaceFolder}/drivers/infiniband/sw/rdmo",
+                "-j4"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

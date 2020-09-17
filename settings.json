@@ -1,8 +1,19 @@
 {
+    "C_Cpp.updateChannel": "Insiders", // Update policy of c/c++ extension
     "files.exclude": {
-        "**/.*.*.cmd": true,
-        "**/.*.d": true,
-        "**/.*.S": true
+        "**/*.*.cmd": true,
+        "**/*.d": true,
+        "**/*.S": true,
+        "**/*.o": true,
+        "**/*.dwo": true,
+        "**/*.ko": true,
+        "**/*.mod.c": true,
+        "**/*.mod": true,
+        "**/cscope*":true,
+        "**/modules*":true,
+        "**/Modules*":true,
+        "**/vmlinux*":true,
+        "**/.tmp*":true
     },
     "[c]": {
         "editor.detectIndentation": false,
