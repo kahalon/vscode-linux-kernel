@@ -17,7 +17,7 @@
             "type": "process",
             "command": "make",
             "args": [
-                "-j4"
+                "-j20"
             ],
             "problemMatcher": [
                 "$gcc"
@@ -33,7 +33,7 @@
             "command": "make",
             "args": [
                 "M=${workspaceFolder}/drivers/infiniband/sw/rdmo",
-                "-j4"
+                "-j20"
             ],
             "problemMatcher": [
                 "$gcc"
