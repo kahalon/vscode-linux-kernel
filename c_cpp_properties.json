@@ -1,36 +1,45 @@
 {
-    "env": {
-      "arch": "x86",
-      "linux-kernel-sources": "${workspaceFolder}",
-      "myIncludes": [
-        "/usr/lib/gcc/x86_64-redhat-linux/10/include/",
-        "${linux-kernel-sources}/drivers/infiniband/sw/rdmo/",
-        "${linux-kernel-sources}/include/",
-        "${linux-kernel-sources}/include/uapi",
-        "${linux-kernel-sources}/include/generated",
-        "${linux-kernel-sources}/arch/${arch}/include/*",
-        "${linux-kernel-sources}/arch/${arch}/include/uapi",
-        "${linux-kernel-sources}/arch/${arch}/include/generated"
-      ],
-      "myCompilerPath": "/usr/bin/gcc",
-      "compileCommands": "${workspaceFolder}/compile_commands.json"
-    },
-    "configurations": [
-      {
-        "name": "Linux",
-        "intelliSenseMode": "gcc-x64",
-        "includePath": ["${myIncludes}"],
-        "compilerPath": "${myCompilerPath}",
-        "cStandard": "c89",
-        "browse": {
-          "path": ["${myIncludes}"],
-          "limitSymbolsToIncludedHeaders": true,
-          "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
-        },
-        "defines": [
-          "__KERNEL__=1"
-        ]
-      }
+  "env": {
+    "arch": "x86",
+    "linux-kernel-sources": "${workspaceFolder}",
+    "myIncludes": [
+      "/usr/lib/gcc/x86_64-redhat-linux/10/include/**",
+      "${linux-kernel-sources}/drivers/infiniband/core/**",
+      "${linux-kernel-sources}/drivers/infiniband/sw/rdmo/**",
+      "${linux-kernel-sources}/include/**",
+      "${linux-kernel-sources}/arch/${arch}/include/**"
     ],
-    "version": 4
+    "myBrowser": [
+      "${workspaceFolder}",
+      "/usr/lib/gcc/x86_64-redhat-linux/10/include",
+      "${linux-kernel-sources}/drivers/infiniband/core",
+      "${linux-kernel-sources}/drivers/infiniband/sw/rdmo",
+      "${linux-kernel-sources}/include",
+      "${linux-kernel-sources}/arch/${arch}/include"
+    ],
+    "myCompilerPath": "/usr/bin/gcc",
+    "compileCommands": "${workspaceFolder}/compile_commands.json"
+  },
+  "configurations": [
+    {
+      "name": "Linux",
+      "intelliSenseMode": "gcc-x64",
+      "includePath": [
+        "${myIncludes}"
+      ],
+      "compilerPath": "${myCompilerPath}",
+      "cStandard": "c89",
+      "browse": {
+        "path": [
+          "${myBrowser}"
+        ],
+        "limitSymbolsToIncludedHeaders": false,
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+      },
+      "defines": [
+        "__KERNEL__=1"
+      ]
+    }
+  ],
+  "version": 4
 }
